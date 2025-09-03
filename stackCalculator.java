@@ -4,11 +4,9 @@ import java.util.Stack;
 
 public class StackCalculator {
     private Stack<Double> calculator;
-    private String command;
 
     public StackCalculator() {
         calculator = new Stack<>();
-        command = "";
     }
 
     public void displayWelcomeMessage() {
@@ -40,22 +38,12 @@ public class StackCalculator {
         }
     }
 
-    public int size() {
-        return calculator.size();
-    }
-
-    public void getValues() {
+    public void listStack() {
         if (calculator.isEmpty()) {
             System.out.println("Stack is empty.");
         } else {
-            for (Double d : calculator) {
-                System.out.println(d);
-            }
+            System.out.println("Stack: " + calculator);
         }
-    }
-
-    public void listStack() {
-        System.out.println("Stack: " + calculator);
     }
 
     public void clearStack() {
@@ -63,7 +51,6 @@ public class StackCalculator {
         System.out.println("Stack cleared.");
     }
 
-    // Arithmetic operations
     public void add() {
         if (calculator.size() >= 2) {
             double a = calculator.pop();
